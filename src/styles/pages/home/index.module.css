@@ -1,0 +1,74 @@
+main#home {
+  /* flex */
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-gap);
+}
+
+.background {
+  /* position */
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  /* sizing */
+  width: 100%;
+  height: 100%;
+}
+
+.background_blob {
+  /* position */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 1;
+
+  /* sizing */
+  width: 40vmax;
+  height: 40vmax;
+
+  /* styling */
+  border-radius: 50%;
+  background-color: white;
+  background: linear-gradient(to right, #40c9ff, #e81cff);
+
+  /* animation */
+  animation: rotate 40s infinite;
+  opacity: 0.8;
+}
+
+.background_blur {
+  /* position */
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  /* sizing */
+  height: 100%;
+  width: 100%;
+
+  /* styling */
+  backdrop-filter: blur(12vmax);
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  50% {
+    scale: 1 1.5;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+@media print, (prefers-reduced-motion) {
+  .background_blob {
+    /* animation */
+    animation: none !important;
+  }
+}

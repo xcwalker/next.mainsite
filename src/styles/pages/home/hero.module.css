@@ -1,0 +1,113 @@
+section#hero {
+    /* sizing */
+    height: 100vh;
+}
+
+section#hero .container {
+    /* sizing */
+    height: 100%;
+    width: 100%;
+
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    /* variables */
+    --height-total: clamp(40px, 15vw, 75px);
+    --height-decrease: clamp(-2px, -5vw + 200px, 5px);
+    --border-width: clamp(4px, 1vw, 7px);
+
+    /* sizing */
+    width: fit-content;
+    height: var(--height-total);
+
+    /* flex */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo h1 {
+    /* text */
+    font-size: calc(var(--height-total) - (var(--height-decrease) * 2));
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.logo .logo_side {
+    /* sizing */
+    width: calc(var(--border-width) * 3);
+    height: var(--height-total);
+
+    /* styling */
+    border: var(--border-width) solid currentColor;
+}
+
+.logo .logo_side:first-of-type {
+    border-right: none;
+}
+
+.logo .logo_side:last-of-type {
+    border-left: none;
+}
+
+.expand {
+    /* position */
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    translate: 0 -10px;
+    transform: translateX(-50%);
+
+    /* text */
+    text-decoration: none;
+
+    /* styling */
+    color: inherit;
+
+    /* transition */
+    transition: translate var(--transition-duration-500) var(--transition-method-default);
+}
+
+.expand::before,
+.expand::after {
+    /* content */
+    content: "expand_more";
+
+    /* font */
+    font-family: 'Material Symbols Outlined';
+
+    /* position */
+    position: absolute;
+    inset: 0;
+
+    /* transition */
+    transition: opacity var(--transition-duration-500) var(--transition-method-default);
+}
+
+.expand::before {
+    translate: 0 -10px;
+    opacity: 0;
+}
+
+.expand::after {
+    translate: 0 10px;
+    opacity: 1;
+}
+
+.expand:hover {
+    translate: 0 0;
+}
+
+.expand:hover::before {
+    opacity: 1;
+}
+
+.expand:hover::after {
+    opacity: 0;
+}

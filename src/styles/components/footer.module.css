@@ -1,0 +1,101 @@
+footer#footer {
+    /* sizing */
+    width: 100%;
+
+    /* styling */
+    background-color: var(--background-color-200);
+}
+
+footer#footer > .container {
+    /* sizing */
+    padding: var(--footer-padding);
+    
+    /* grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+    gap: 20px;
+}
+
+footer#footer > .container > section {
+    /* sizing */
+    width: 100%;
+
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+footer#footer > .container > section .divider {
+    /* sizing */
+    width: 100%;
+    height: 2px;
+
+    /* styling */
+    background-color: currentColor;
+}
+
+footer#footer > .container > section a.logo {
+    /* flex */
+    display: flex;
+
+    /* styling */
+    color: var(--foreground-color-200);
+}
+
+footer#footer > .container > section a.logo:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+footer#footer > .container > section a.logo svg {
+    /* styling */
+    color: inherit;
+    fill: currentColor;
+}
+
+footer#footer > .container > section p {
+    /* spacing */
+    margin: 0;
+
+    /* text */
+    white-space: pre-line;
+}
+
+footer#footer > .container > section p span {
+    display: block;
+}
+
+footer#footer > .container > section a.link {
+    /* sizing */
+    width: 100%;
+    height: 35px;
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* text */
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+
+    /* styling */
+    border-radius: 10px;
+    border: 2px solid var(--foreground-color-200);
+    background-color: var(--foreground-color-200);
+    color: var(--background-color-200);
+}
+
+footer#footer > .container > section a.link:hover,
+footer#footer > .container > section a.link:focus-visible {
+    /* styling */
+    color: var(--foreground-color-200);
+    background-color: var(--background-color-200);
+}
+
+footer#footer > .container > section a.link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
