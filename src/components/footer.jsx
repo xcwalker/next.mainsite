@@ -18,10 +18,16 @@ export function Footer() {
               />
             </svg>
           </a>
+        </section>
+        <section>
+          <div className={css.divider} />
           <p>
             <span>Copyright © 2023 xcwalker.</span>
             <span>All rights reserved.</span>
           </p>
+          <div className={css.divider} />
+        </section>
+        <section>
           <div className={css.divider} />
           <p>
             <span>Just having fun.</span>
@@ -29,7 +35,7 @@ export function Footer() {
           </p>
           <div className={css.divider} />
         </section>
-        <section>
+        {/* <section>
           <a href="mailto:contact@xcw.one" className={css.link}>
             contact@xcw.one
           </a>
@@ -52,7 +58,7 @@ export function Footer() {
           <a href="https://github.com/xcwalker/react.mainsite" className={css.link}>
             Github
           </a>
-        </section>
+        </section> */}
       </div>
     </footer>
   );

@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
 // css
 import heroCSS from "@/styles/pages/home/hero.module.css";
 
-export function Hero(props) {
+export function Home_Hero(props) {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   let interval = null;

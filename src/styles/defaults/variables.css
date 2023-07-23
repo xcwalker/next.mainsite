@@ -73,6 +73,18 @@ html
         --form-color-valid-hold-opac: hsl(120, 100%, 38%, 0.25);
         --form-color-valid-opac: hsl(120, 100%, 25%, 0.25);
     }
+
+    html {
+        /** new colors **/
+        --bkg-color: #004a80;
+        --bkg-color-strong: #003b66;
+        --bkg-color-accent: rgba(255, 255, 255, 0.1);
+        --bkg-color-accent-strong: rgba(255, 255, 255, 0.25);
+        --hover-color-rgb: 255, 255, 255;
+        --frg-color-title: #fff;
+        --frg-color-subtitle: #fff;
+        --frg-color-content: #fff;
+    }
 }
 
 @media (prefers-color-scheme: light) {
@@ -110,6 +122,18 @@ html
         --form-color-invalid-hold-opac: hsl(39, 100%, 50%, 0.25);
         --form-color-valid-hold-opac: hsl(120, 100%, 38%, 0.25);
         --form-color-valid-opac: hsl(120, 100%, 25%, 0.25);
+    }
+
+    html {
+        /** new colors **/
+        --bkg-color: #0073ff;
+        --bkg-color-strong: #005ccc;
+        --bkg-color-accent: rgba(255, 255, 255, 0.1);
+        --bkg-color-accent-strong: rgba(255, 255, 255, 0.25);
+        --hover-color-rgb: 255, 255, 255;
+        --frg-color-title: #fff;
+        --frg-color-subtitle: #fff;
+        --frg-color-content: #fff;
     }
 }
 

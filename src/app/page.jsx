@@ -1,13 +1,16 @@
-import { Hero } from "@/components/home/hero";
+import { Home_Hero } from "@/components/home/hero";
+import { Home_Repos } from "@/components/home/repos";
 import Horizontal from "@/components/home/horizontal";
-import Hover from "@/components/home/hover";
+// Other
+import Background from "@/components/home/background";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Hover />
-      <Horizontal />
+      <Background />
+      <Home_Hero />
+      {/* <Horizontal /> */}
+      <Home_Repos />
     </>
   );
 }

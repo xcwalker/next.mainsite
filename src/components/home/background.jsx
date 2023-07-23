@@ -4,7 +4,7 @@
 import indexCSS from "@/styles/pages/home/index.module.css";
 import { useEffect } from "react";
 
-export default function Hover() {
+export default function Background() {
   useEffect(() => {
     const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 
@@ -32,11 +32,13 @@ export default function Hover() {
   };
 
   return (
-    <>
-      <div className={indexCSS.background}>
+    <section id={indexCSS.background}>
+      <div className={indexCSS.background} />
+      <div className={indexCSS.background_blob_container}>
         <div className={indexCSS.background_blob} id="blob" />
         <div className={indexCSS.background_blur} />
       </div>
-    </>
+      <div className={indexCSS.background_grid} />
+    </section>
   );
 }
