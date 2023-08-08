@@ -36,7 +36,6 @@ export default function Background() {
       <div className={indexCSS.background} />
       <div className={indexCSS.background_blob_container}>
         <div className={indexCSS.background_blob} id="blob" />
-        <div className={indexCSS.background_blur} />
       </div>
       <div className={indexCSS.background_grid} />
     </section>

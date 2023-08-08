@@ -1,6 +1,6 @@
 section#hero {
   /* sizing */
-  height: 100vh;
+  height: 100svh;
 
   /* styling */
   color: var(--frg-color-content);

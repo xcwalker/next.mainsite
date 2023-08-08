@@ -126,8 +126,8 @@ html
 
     html {
         /** new colors **/
-        --bkg-color: #0073ff;
-        --bkg-color-strong: #005ccc;
+        --bkg-color: #005ccc;
+        --bkg-color-strong: #004599;
         --bkg-color-accent: rgba(255, 255, 255, 0.1);
         --bkg-color-accent-strong: rgba(255, 255, 255, 0.25);
         --hover-color-rgb: 255, 255, 255;

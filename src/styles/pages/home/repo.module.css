@@ -6,6 +6,133 @@ section#code > div.container {
   padding: var(--header-style-padding);
 }
 
+section#code > div.container > .ident_container {
+  /* position */
+  position: sticky;
+  inset: auto;
+  top: var(--header-style-padding-inline);
+  z-index: 997;
+
+  /* sizing */
+  height: 0;
+}
+
+section#code > div.container > .ident_container > .ident {
+  /* position */
+  position: relative;
+  top: 0;
+  right: 0;
+
+  /* flex */
+  display: flex;
+
+  /* sizing */
+  width: fit-content;
+  padding: 5px 10px;
+  margin-left: auto;
+  padding-right: calc(10px + var(--header-style-padding-inline));
+  translate: var(--header-style-padding-inline) 0;
+
+  /* text */
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+
+  /* styling */
+  color: var(--frg-color-subtitle);
+  background-color: var(--bkg-color);
+}
+
+section#code > div.container > .loading {
+  /* position */
+  position: relative;
+
+  /* sizing */
+  width: 100%;
+  height: 450px;
+
+  /* styling */
+}
+
+section#code > div.container > .loading > .dots {
+  /* variables */
+  --size: 8px;
+  --animation-duration: 0.75s;
+
+  /* position */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+
+  /* sizing */
+  width: var(--size);
+  height: var(--size);
+
+  /* styling */
+  border-radius: 5px;
+  background-color: var(--dnu-light-color-000);
+  color: var(--dnu-light-color-000);
+
+  /* animation */
+  animation: dot-flashing var(--animation-duration) infinite linear alternate;
+  animation-delay: calc(var(--animation-duration) / 2);
+}
+section#code > div.container > .loading > .dots::before,
+section#code > div.container > .loading > .dots::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+section#code > div.container > .loading > .dots::before {
+  /* position */
+  left: -15px;
+
+  /* sizing */
+  width: var(--size);
+  height: var(--size);
+
+  /* styling */
+  border-radius: 5px;
+  background-color: var(--dnu-light-color-000);
+  color: var(--dnu-light-color-000);
+
+  /* animation */
+  animation: dot-flashing var(--animation-duration) infinite alternate;
+  animation-delay: 0s;
+}
+section#code > div.container > .loading > .dots::after {
+  /* position */
+  left: 15px;
+
+  /* sizing */
+  width: var(--size);
+  height: var(--size);
+
+  /* styling */
+  border-radius: 5px;
+  background-color: var(--dnu-light-color-000);
+  color: var(--dnu-light-color-000);
+
+  /* animation */
+  animation: dot-flashing var(--animation-duration) infinite alternate;
+  animation-delay: calc(var(--animation-duration) / 1);
+}
+
+@keyframes dot-flashing {
+  0% {
+    background-color: var(--dnu-light-color-000);
+  }
+  25% {
+    background-color: var(--dnu-light-color-000);
+  }
+  75%,
+  100% {
+    background-color: var(--dnu-light-color-500);
+  }
+}
+
 section#code > div.container > ul.grid {
   /* variables */
   --_width: max(282px, 15vw);
@@ -21,10 +148,26 @@ section#code > div.container > ul.grid {
   gap: 20px;
 }
 
+section#code > div.container > ul.grid > .ident {
+  /* placement */
+  grid-column: 1 / 2;
+  grid-row: -1 / 2;
+}
+section#code > div.container > ul.grid > .ident > span.title {
+}
+
 section#code > div.container > ul.grid > a.entry:first-of-type {
   /* placement */
   grid-column: 1 / 3;
   grid-row: 1 / 3;
+}
+
+@media (max-width: 650px) {
+  section#code > div.container > ul.grid > a.entry:first-of-type {
+    /* placement */
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
 }
 
 section#code > div.container > ul.grid > a.entry {
@@ -104,7 +247,7 @@ section#code > div.container > ul.grid > a.entry > div.about > span.subtitle {
   font-size: 10px;
   font-weight: 500;
   line-height: 1;
-  
+
   /* styling */
   color: white;
 }
@@ -120,10 +263,12 @@ section#code > div.container > ul.grid > a.entry > div.pills {
   flex-direction: row-reverse;
   align-items: flex-end;
   gap: 5px;
+  flex-wrap: wrap;
 }
 
 section#code > div.container > ul.grid > a.entry > div.pills > a {
   /* sizing */
+  flex-shrink: 0;
   padding: 5px 10px;
 
   /* text */

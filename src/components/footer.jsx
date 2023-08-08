@@ -4,6 +4,11 @@ import css from "@/styles/components/footer.module.css";
 export function Footer() {
   return (
     <footer id={css.footer}>
+      <div className={css.ident}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135.47 135.47">
+          <path d="M0 0v34.833l32.901 32.901L0 100.635v34.833h34.833l67.733-67.733L34.833.002zm100.63 0L85.145 15.485l34.833 34.833 15.485-15.485V0zm19.348 85.149-34.833 34.833 15.485 15.485h34.833v-34.833z" />
+        </svg>
+      </div>
       <div className={css.container}>
         <section>
           <a href="https://xcwalker.dev" className={css.logo}>

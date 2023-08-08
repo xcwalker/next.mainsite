@@ -11,6 +11,7 @@ const db = getFirestore(firebase_app);
 
 export function Home_Repos() {
   const [entries, setEntries] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const q = query(collection(db, "repos"), orderBy("about.date", "desc"), limit(10));
@@ -43,11 +44,14 @@ export function Home_Repos() {
           return m.some((d) => d.id === doc.id) ? [...m] : [...m, { data: doc.data(), id: doc.id }];
         });
       });
+
+      setLoading(false);
     });
 
     return () => {
       unsubscribe();
       setEntries([]);
+      setLoading(true);
     };
   }, []);
 
@@ -55,14 +59,34 @@ export function Home_Repos() {
     <>
       <section id={css.code}>
         <div className={css.container}>
+          <div className={css.ident_container}>
+            <span className={css.ident}>Repos</span>
+          </div>
+          {!entries && (
+            <>
+              {loading && (
+                <div className={css.loading}>
+                  <div className={css.dots} />
+                </div>
+              )}
+              {!loading && (
+                <div className={css.error}>
+                  <span className={css.title}>No Repos Found</span>
+                </div>
+              )}
+            </>
+          )}
           <ul className={css.grid}>
+            {/* <div className={css.ident}>
+              <span className={css.title}>Repos</span>
+  </div> */}
             {entries &&
               entries
                 .sort((a, b) => b.data.about.date.localeCompare(a.data.about.date))
                 .map((entry, index) => {
                   return (
                     <Fragment key={index}>
-                      <Entry entry={entry} index={index}/>
+                      <Entry entry={entry} index={index} />
                     </Fragment>
                   );
                 })}
@@ -106,7 +130,7 @@ function Entry(props) {
               </Link>
             );
           })}
-          {props.index === 0 && <span className={css.latest}>Latest</span>}
+        {props.index === 0 && <span className={css.latest}>Latest</span>}
       </div>
     </Link>
   );

@@ -40,24 +40,11 @@
   border-radius: 50%;
   background-color: white;
   background: radial-gradient(rgb(255, 255, 255, 0.2), rgb(255, 255, 255, 0));
+  filter: blur(12vmax);
 
   /* animation */
   animation: rotate 40s infinite;
   opacity: 0.8;
-}
-
-.background_blur {
-  /* position */
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-
-  /* sizing */
-  height: 100%;
-  width: 100%;
-
-  /* styling */
-  backdrop-filter: blur(12vmax);
 }
 
 @keyframes rotate {
@@ -93,5 +80,5 @@
   --_g: #00000000 90deg, var(--bkg-color-accent) 0;
   background: conic-gradient(from 90deg at 2px 2px, var(--_g)), conic-gradient(from 90deg at 1px 1px, var(--_g));
   background-size: var(--s) var(--s), calc(var(--s) / 5) calc(var(--s) / 5);
-  background-position: center calc(50vh - (var(--s) / 2));
+  background-position: center calc(50svh - (var(--s) / 2));
 }
