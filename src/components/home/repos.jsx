@@ -91,6 +91,7 @@ export function Home_Repos() {
                   );
                 })}
           </ul>
+          <Link href="/repo">See More Repos</Link>
         </div>
       </section>
     </>

@@ -1,0 +1,125 @@
+header.header {
+  /* position */
+  position: fixed;
+  inset: 0;
+  bottom: auto;
+  z-index: 999;
+
+  /* sizing */
+  height: var(--header-height);
+
+  /* transition */
+  transition: backdrop-filter var(--transition-duration-400) var(--transition-method-default);
+}
+
+header.header:global(.scrolled) {
+  backdrop-filter: brightness(.8) blur(15px) opacity(1);
+}
+
+header.header > .container {
+  /* sizing */
+  width: 100%;
+  height: 100%;
+  padding: var(--header-padding);
+
+  /* flex */
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header.header > .container > svg {
+  /* sizing */
+  height: 100%;
+  width: auto;
+  
+  /* styling */
+  color: inherit;
+  fill: currentColor;
+}
+
+header.header > .container > .right {
+  /* variables */
+  --_icon-size: 32px;
+  --_icon-size-small: 26px;
+
+  /* sizing */
+  max-height: 32px;
+
+  /* flex */
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+
+header.header > .container > .right > .separator {
+  /* sizing */
+  height: calc(var(--_icon-size) + 10px);
+  width: 2px;
+
+  /* styling */
+  background-color: currentColor;
+  color: inherit;
+}
+
+header.header > .container > .right > nav {
+}
+
+header.header > .container > .right > nav > ul,
+header.header > .container > .right > ul {
+
+  /* spacing */
+  margin: 0;
+  padding: 0;
+
+  /* flex */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+header.header > .container > .right > nav > ul > a,
+header.header > .container > .right > ul > a {
+  /* sizing */
+  width: var(--_icon-size);
+  height: var(--_icon-size);
+
+  /* flex */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* text */
+  text-decoration: none;
+
+  /* styling */
+  list-style: none;
+  color: inherit;
+}
+
+header.header > .container > .right > ul > a:hover,
+header.header > .container > .right > ul > a:focus-visible {
+  /* outline */
+  outline: 2px solid currentColor;
+  outline-offset: -1px;
+}
+
+header.header > .container > .right > nav > ul > a span {
+  /* text */
+  font-size: var(--_icon-size);
+}
+
+header.header > .container > .right > ul > a svg {
+  /* sizing */
+  width: var(--_icon-size-small);
+  height: var(--_icon-size-small);
+
+  /* styling */
+  fill: currentColor;
+  color: inherit;
+}
